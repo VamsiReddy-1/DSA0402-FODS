@@ -1,0 +1,225 @@
+ 
+FIRST FIVE RECORDS
+   age          job  marital  education default  balance housing loan  \
+0   47      retired   single    primary      no      213     yes   no   
+1   39  blue-collar   single  secondary      no      130      no  yes   
+2   49     services  married   tertiary      no    -3628      no   no   
+3   59      retired   single   tertiary      no      476     yes   no   
+4   38     services  married  secondary      no     3452     yes   no   
+
+     contact  day month  duration  campaign  pdays  previous poutcome    y  
+0   cellular    8   mar       278         2    223         2  failure   no  
+1  telephone   30   feb       422         1     68         1  failure   no  
+2   cellular    4   jan       182         2    122         1    other  yes  
+3   cellular   20   dec       387         1     -1         0  unknown   no  
+4  telephone   11   jan       236         3     -1         0  unknown   no  
+
+DATASET SHAPE
+(5000, 17)
+
+DATA INFORMATION
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5000 entries, 0 to 4999
+Data columns (total 17 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   age        5000 non-null   int64 
+ 1   job        5000 non-null   object
+ 2   marital    5000 non-null   object
+ 3   education  5000 non-null   object
+ 4   default    5000 non-null   object
+ 5   balance    5000 non-null   int64 
+ 6   housing    5000 non-null   object
+ 7   loan       5000 non-null   object
+ 8   contact    5000 non-null   object
+ 9   day        5000 non-null   int64 
+ 10  month      5000 non-null   object
+ 11  duration   5000 non-null   int64 
+ 12  campaign   5000 non-null   int64 
+ 13  pdays      5000 non-null   int64 
+ 14  previous   5000 non-null   int64 
+ 15  poutcome   5000 non-null   object
+ 16  y          5000 non-null   object
+dtypes: int64(7), object(10)
+memory usage: 664.2+ KB
+None
+
+STATISTICAL SUMMARY
+              age       balance          day     duration     campaign  \
+count  5000.00000   5000.000000  5000.000000  5000.000000  5000.000000   
+mean     41.19400   1372.352800    16.122400   257.041400     3.517000   
+std      11.66041   2829.228339     8.941197   182.516304     1.612523   
+min      18.00000  -9583.000000     1.000000     5.000000     1.000000   
+25%      33.00000   -522.250000     8.000000   121.000000     2.000000   
+50%      41.00000   1351.000000    16.000000   213.000000     3.000000   
+75%      49.00000   3296.500000    24.000000   347.000000     4.000000   
+max      88.00000  11281.000000    31.000000  1398.000000    11.000000   
+
+             pdays     previous  
+count  5000.000000  5000.000000  
+mean     80.418400     0.787400  
+std      97.909952     0.888121  
+min      -1.000000     0.000000  
+25%      -1.000000     0.000000  
+50%      23.500000     1.000000  
+75%     161.000000     1.000000  
+max     299.000000     6.000000  
+
+MISSING VALUES
+age          0
+job          0
+marital      0
+education    0
+default      0
+balance      0
+housing      0
+loan         0
+contact      0
+day          0
+month        0
+duration     0
+campaign     0
+pdays        0
+previous     0
+poutcome     0
+y            0
+dtype: int64
+
+DUPLICATE RECORDS: 0
+
+HIGH BALANCE CUSTOMERS
+    age         job   marital  education default  balance housing loan  \
+4    38    services   married  secondary      no     3452     yes   no   
+6    60   housemaid    single   tertiary      no     4336     yes  yes   
+7    50    services  divorced   tertiary      no     2766      no   no   
+9    48     retired   married  secondary      no     1004      no   no   
+10   35  management    single   tertiary      no     5875     yes  yes   
+
+      contact  day month  duration  campaign  pdays  previous poutcome   y  
+4   telephone   11   jan       236         3     -1         0  unknown  no  
+6    cellular   14   jul        69         3     -1         0  unknown  no  
+7    cellular   21   jul        32         4     -1         0  unknown  no  
+9    cellular   29   dec       248         3     -1         0  unknown  no  
+10   cellular   22   feb       120         4     41         1  failure  no  
+
+TOP CUSTOMERS BY BALANCE
+      age          job  marital  education default  balance housing loan  \
+1891   41   unemployed  married   tertiary     yes    11281      no   no   
+3248   44     services   single   tertiary      no    10857     yes   no   
+3726   47  blue-collar  married   tertiary      no    10242     yes   no   
+2223   39       admin.   single   tertiary      no    10130      no   no   
+796    41     services  married  secondary      no    10075      no   no   
+
+       contact  day month  duration  campaign  pdays  previous poutcome    y  
+1891  cellular    5   may        81         2     60         1    other  yes  
+3248  cellular   21   feb       255         3     -1         0  unknown   no  
+3726  cellular   14   feb       656         5     -1         0  unknown  yes  
+2223  cellular   19   may       431         2      3         1    other  yes  
+796   cellular    9   sep       316         3    203         1    other   no  
+
+AVERAGE BALANCE BY JOB
+job
+admin.           1524.131640
+blue-collar      1448.232816
+entrepreneur     1096.039911
+housemaid        1606.921114
+management       1342.309211
+retired          1316.399543
+self-employed    1228.405229
+services         1228.067086
+student          1351.628510
+technician       1374.410148
+unemployed       1597.356838
+Name: balance, dtype: float64
+
+MEAN AGE
+41.194
+
+VARIANCE OF BALANCE
+8004532.99173051
+
+STANDARD DEVIATION OF BALANCE
+2829.228338563452
+
+COVARIANCE
+                age       balance
+age      135.965157 -1.731093e+02
+balance -173.109265  8.004533e+06
+
+CORRELATION
+              age   balance
+age      1.000000 -0.005247
+balance -0.005247  1.000000
+
+NUMBER OF BALANCE OUTLIERS
+34
+
+POINT ESTIMATE
+0.1914
+
+95% CONFIDENCE INTERVAL
+0.18049542096856552 0.20230457903143445
+
+==============================
+Logistic Regression
+==============================
+Accuracy: 0.816
+Precision: 0.5945945945945946
+Recall: 0.11518324607329843
+F1 Score: 0.19298245614035087
+
+==============================
+k-Nearest Neighbours
+==============================
+Accuracy: 0.791
+Precision: 0.2857142857142857
+Recall: 0.06282722513089005
+F1 Score: 0.10300429184549356
+
+==============================
+Decision Tree
+==============================
+Accuracy: 0.776
+Precision: 0.2911392405063291
+Recall: 0.12041884816753927
+F1 Score: 0.17037037037037037
+
+MODEL COMPARISON
+                  Model  Accuracy  Precision    Recall  F1 Score
+0   Logistic Regression     0.816   0.594595  0.115183  0.192982
+1  k-Nearest Neighbours     0.791   0.285714  0.062827  0.103004
+2         Decision Tree     0.776   0.291139  0.120419  0.170370
+
+BEST MODEL BASED ON F1 SCORE
+Model        Logistic Regression
+Accuracy                   0.816
+Precision               0.594595
+Recall                  0.115183
+F1 Score                0.192982
+Name: 0, dtype: object
+
+CUSTOMER CLUSTER SUMMARY
+               age      balance  campaign  previous
+cluster                                            
+0        31.598401   976.721402  2.800738  0.455105
+1        51.376112  1677.902160  2.917408  0.428208
+2        41.195913  1415.824519  3.278846  2.332933
+3        40.754132  1502.717975  5.899793  0.601240
+
+NUMBER OF CUSTOMERS IN EACH CLUSTER
+cluster
+0    1626
+1    1574
+3     968
+2     832
+Name: count, dtype: int64
+
+SUBSCRIPTION RATE BY CLUSTER
+cluster
+0    0.169742
+1    0.208386
+2    0.264423
+3    0.137397
+Name: y, dtype: float64
+
+PROJECT EXECUTION COMPLETED SUCCESSFULLY
